@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git Learning Guide - Beginner to Professional</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; display: flex; }
+    header { background: #333; color: #fff; padding: 1rem 0; text-align: center; position: sticky; top: 0; width: 100%; z-index: 1000; }
+    nav.sidebar { background: #f4f4f4; width: 220px; padding: 1rem; height: 100vh; position: sticky; top: 0; overflow-y: auto; }
+    nav.sidebar a { display: block; margin-bottom: 1rem; color: #333; text-decoration: none; }
+    nav.sidebar a:hover { text-decoration: underline; }
+    main { flex: 1; padding: 2rem; overflow-y: auto; }
+    h2 { color: #333; border-bottom: 2px solid #ccc; padding-bottom: 0.5rem; }
+    .lesson { margin-bottom: 2rem; border: 1px solid #ccc; border-radius: 5px; }
+    .lesson summary { background: #eee; padding: 1rem; cursor: pointer; font-weight: bold; }
+    .lesson details { padding: 1rem; }
+    pre { background: #f4f4f4; padding: 1rem; overflow-x: auto; }
+    @media(max-width: 768px) {
+      body { flex-direction: column; }
+      nav.sidebar { width: 100%; height: auto; position: relative; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Git Learning Guide</h1>
+  <p>From Beginner to Professional Developer</p>
+</header>
+
+<nav class="sidebar">
+  <a href="#phase1">Phase 1: Basics</a>
+  <a href="#phase2">Phase 2: Essential Skills</a>
+  <a href="#phase3">Phase 3: Intermediate</a>
+  <a href="#phase4">Phase 4: Advanced</a>
+</nav>
+
+<main>
+
+<section id="phase1">
+  <h2>Phase 1: Git Basics</h2>
+
+  <details class="lesson">
+    <summary>Lesson 1: What is Git?</summary>
+    <p><strong>Description:</strong> Git is a distributed version control system that tracks changes to files and allows collaboration among developers.</p>
+    <pre>git --version</pre>
+    <p><strong>Exercise:</strong> Write a 2-sentence explanation of Git in your own words.</p>
+  </details>
+
+  <details class="lesson">
+    <summary>Lesson 2: Installing Git</summary>
+    <p><strong>Description:</strong> Set up Git on your system and configure user settings.</p>
+    <pre>
+sudo apt install git
+brew install git
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+    </pre>
+    <p><strong>Exercise:</strong> Install Git and set your global username and email.</p>
+  </details>
+
+  <details class="lesson">
+    <summary>Lesson 3: Basic Git Workflow</summary>
+    <p><strong>Description:</strong> Learn how to create a repository, stage changes, and make commits.</p>
+    <pre>
+git init
+git add .
+git commit -m "Initial commit"
+git status
+git log
+    </pre>
+    <p><strong>Exercise:</strong> Create a repository, add a file, and make your first commit.</p>
+  </details>
+
+  <details class="lesson">
+    <summary>Lesson 4: Understanding Commits</summary>
+    <p><strong>Description:</strong> Commits are snapshots of your project history, identified by unique hashes.</p>
+    <pre>
+git commit -m "Add feature A"
+git log
+    </pre>
+    <p><strong>Exercise:</strong> Make three commits and view them with git log.</p>
+  </details>
+
+  <details class="lesson">
+    <summary>Lesson 5: Branching Basics</summary>
+    <p><strong>Description:</strong> Branches allow isolated development without affecting the main codebase.</p>
+    <pre>
+git branch feature-1
+git checkout feature-1
+    </pre>
+    <p><strong>Exercise:</strong> Create two branches and switch between them using git checkout.</p>
+  </details>
+</section>
+
+<section id="phase2">
+  <h2>Phase 2: Essential Git Skills</h2>
+
+  <details class="lesson">
+    <summary>Lesson 6: Cloning Repositories</summary>
+    <p><strong>Description:</strong> Clone existing repositories to work locally.</p>
+    <pre>
+git clone https://github.com/user/repository.git
+    </pre>
+    <p><strong>Exercise:</strong> Clone a public GitHub repository to your machine.</p>
+  </details>
+
+  <details class="lesson">
+    <summary>Lesson 7: Pull and Fetch</summary>
+    <p><strong>Description:</strong> Understand the difference between pulling changes and fetching updates from a remote.</p>
+    <pre>
+git fetch
+    git pull
+    </pre>
+    <p><strong>Exercise:</strong> Fetch and pull changes from a remote repository after you clone it.</p>
+  </details>
+
+  <details class="lesson">
+    <summary>Lesson 8: Pushing Changes</summary>
+    <p><strong>Description:</strong> Push your commits from the local repository to the remote server.</p>
+    <pre>
+git push origin main
+    </pre>
+    <p><strong>Exercise:</strong> Push a new commit to a GitHub repository.</p>
+  </details>
+
+  <details class="lesson">
+    <summary>Lesson 9: Merging Branches</summary>
+    <p><strong>Description:</strong> Merge a branch into another to combine development work.</p>
+    <pre>
+git checkout main
+git merge feature-branch
+    </pre>
+    <p><strong>Exercise:</strong> Merge a feature branch into your main branch.</p>
+  </details>
+
+  <details class="lesson">
+    <summary>Lesson 10: Resolving Merge Conflicts</summary>
+    <p><strong>Description:</strong> Handle conflicts that occur when merging two branches.</p>
+    <pre>
+git status
+git add conflicted-file
+git commit
+    </pre>
+    <p><strong>Exercise:</strong> Create a conflict between two branches and resolve it manually.</p>
+  </details>
+</section>
+
+<section id="phase3">
+  <h2>Phase 3: Intermediate Git</h2>
+
+  <details class="lesson">
+    <summary>Lesson 11: Stashing Changes</summary>
+    <p><strong>Description:</strong> Temporarily store changes without committing them.</p>
+    <pre>
+git stash
+git stash apply
+    </pre>
+    <p><strong>Exercise:</strong> Make a change, stash it, and reapply it later.</p>
+  </details>
+
+  <details class="lesson">
+    <summary>Lesson 12: Working with Remotes</summary>
+    <p><strong>Description:</strong> Add and manage remote repositories.</p>
+    <pre>
+git remote add origin https://github.com/user/repo.git
+git remote -v
+    </pre>
+    <p><strong>Exercise:</strong> Add a new remote repository to a local project.</p>
+  </details>
+
+  <details class="lesson">
+    <summary>Lesson 13: Reverting and Resetting</summary>
+    <p><strong>Description:</strong> Undo changes using revert and reset commands.</p>
+    <pre>
+git revert commit_id
+git reset --hard commit_id
+    </pre>
+    <p><strong>Exercise:</strong> Revert a commit, then try a hard reset to a previous state.</p>
+  </details>
+
+  <details class="lesson">
+    <summary>Lesson 14: Tagging Releases</summary>
+    <p><strong>Description:</strong> Use tags to mark important points in history like releases.</p>
+    <pre>
+git tag v1.0
+git push origin v1.0
+    </pre>
+    <p><strong>Exercise:</strong> Create a tag and push it to GitHub.</p>
+  </details>
+
+  <details class="lesson">
+    <summary>Lesson 15: Cherry Picking</summary>
+    <p><strong>Description:</strong> Apply commits from one branch onto another.</p>
+    <pre>
+git cherry-pick commit_id
+    </pre>
+    <p><strong>Exercise:</strong> Cherry-pick a commit from one branch into another branch.</p>
+  </details>
+</section>
+
+<section id="phase4">
+  <h2>Phase 4: Advanced Git</h2>
+
+  <details class="lesson">
+    <summary>Lesson 16: Git Rebase</summary>
+    <p><strong>Description:</strong> Move or combine a sequence of commits to a new base commit.</p>
+    <pre>
+git checkout feature-branch
+git rebase main
+    </pre>
+    <p><strong>Exercise:</strong> Rebase a feature branch onto main.</p>
+  </details>
+
+  <details class="lesson">
+    <summary>Lesson 17: Squash Commits</summary>
+    <p><strong>Description:</strong> Combine multiple commits into a single commit during a rebase.</p>
+    <pre>
+git rebase -i HEAD~3
+    </pre>
+    <p><strong>Exercise:</strong> Squash your last three commits into one.</p>
+  </details>
+
+  <details class="lesson">
+    <summary>Lesson 18: Git Hooks</summary>
+    <p><strong>Description:</strong> Scripts that run automatically at specific Git events.</p>
+    <pre>
+cd .git/hooks
+ls
+    </pre>
+    <p><strong>Exercise:</strong> Explore existing Git hooks and set up a simple pre-commit hook.</p>
+  </details>
+
+  <details class="lesson">
+    <summary>Lesson 19: Submodules</summary>
+    <p><strong>Description:</strong> Include other Git repositories inside a main repository.</p>
+    <pre>
+git submodule add https://github.com/example/repo.git
+    </pre>
+    <p><strong>Exercise:</strong> Add a submodule to your project.</p>
+  </details>
+
+  <details class="lesson">
+    <summary>Lesson 20: Advanced Troubleshooting</summary>
+    <p><strong>Description:</strong> Diagnose and fix Git issues using advanced commands.</p>
+    <pre>
+git fsck
+git reflog
+    </pre>
+    <p><strong>Exercise:</strong> Use reflog to recover a deleted branch or lost commit.</p>
+  </details>
+</section>
+
+</main>
+
+</body>
+</html>
+
